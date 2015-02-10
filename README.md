@@ -5,6 +5,9 @@ Links:
 * http://projects.spring.io/spring-cloud/spring-cloud.html
  
 ## Configuration
+
+Distributed/versioned configuration.
+
 Links:
 
 * http://stackoverflow.com/questions/27131143/spring-cloud-configuration-server-not-working-with-local-properties-file/27159030#27159030
