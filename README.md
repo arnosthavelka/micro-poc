@@ -22,5 +22,7 @@ can override some important configurations (e.g. server port).
 * Property **spring.cloud.config.name** defines the configuration profile (e.g. 'mycfg' for configuration 
 file _classpath:/mycfg.yml_).  If not define than only default (_classpath:/application.yml_) is considered.
 * Each configuration is read by the key, e.g. **http://localhost:8088/env/foo**
+* Configuration DTO can be implemented with annotation _@ConfigurationProperties_ (see class _ConfigurationDTO_)
+* Annotation _@RefreshScope_ is used to refresh configuration changes realized on the configuration server (in the configuration client)
 * Sample REST: **http://localhost:8088/hello**
 
