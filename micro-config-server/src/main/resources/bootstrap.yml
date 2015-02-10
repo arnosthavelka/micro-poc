@@ -1,0 +1,11 @@
+server:
+    port: 8888
+
+info:
+    component: Config Samples
+
+spring:
+    application:
+        name: config-server
+    profiles:
+        active: native
