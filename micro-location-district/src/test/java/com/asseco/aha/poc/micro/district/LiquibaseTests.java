@@ -19,8 +19,8 @@ public class LiquibaseTests {
 
     @Test
     public void testCount() {
-		Integer count = jdbcTemplate.queryForObject("select count(*) from test1", Integer.class);
-		assertThat(count, equalTo(1));
+		Integer count = jdbcTemplate.queryForObject("select count(*) from district", Integer.class);
+		assertThat(count, equalTo(15));
     }
 
 }
