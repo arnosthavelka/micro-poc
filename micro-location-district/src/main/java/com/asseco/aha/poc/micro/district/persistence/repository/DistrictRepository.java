@@ -1,11 +1,13 @@
-package com.asseco.aha.poc.micro.district.repository;
+package com.asseco.aha.poc.micro.district.persistence.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.asseco.aha.poc.micro.district.domain.District;
+import com.asseco.aha.poc.micro.district.persistence.domain.District;
 
-
+@Transactional(propagation = Propagation.MANDATORY)
 public interface DistrictRepository extends JpaRepository<District, Long>, JpaSpecificationExecutor<District> {
 
 	// query is defined by @NamedQuery (in the entity City)

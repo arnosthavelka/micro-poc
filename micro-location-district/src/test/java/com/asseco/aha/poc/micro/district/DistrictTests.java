@@ -1,7 +1,9 @@
 package com.asseco.aha.poc.micro.district;
 
+import static com.asseco.aha.poc.micro.district.persistence.repository.DistrictSpecifications.byName;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+import static org.springframework.data.jpa.domain.Specifications.where;
 
 import java.util.List;
 
@@ -11,12 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.asseco.aha.poc.micro.district.domain.District;
-import com.asseco.aha.poc.micro.district.repository.DistrictRepository;
+import com.asseco.aha.poc.micro.district.persistence.domain.District;
+import com.asseco.aha.poc.micro.district.persistence.repository.DistrictRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = DistrictApplication.class)
+@Transactional(readOnly = true)
 public class DistrictTests {
 
 	// @Autowired
@@ -29,6 +33,8 @@ public class DistrictTests {
 	// }
 
 	private static final String DISTRICT_A = "A";
+
+	private static final String DISTRICT_B = "B";
 
 	private static final String DISTRICT_NAME = "Hlavní město Praha";
 
@@ -52,6 +58,14 @@ public class DistrictTests {
 		District data = districtRepository.findByPlateCodeIgnoringCase(DISTRICT_A);
 		assertThat(data.getPlateCode(), equalTo(DISTRICT_A));
 		assertThat(data.getName(), equalTo(DISTRICT_NAME));
+	}
+
+	@Test
+	public void testFindDynamic() {
+		List<District> data = districtRepository.findAll(where(byName("jih")), new Sort("name"));
+		assertThat(data.size(), equalTo(2));
+		District district = data.get(0);
+		assertThat(district.getPlateCode(), equalTo(DISTRICT_B));
 	}
 
 }

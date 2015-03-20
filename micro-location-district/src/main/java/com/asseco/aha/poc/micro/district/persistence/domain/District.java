@@ -1,4 +1,4 @@
-package com.asseco.aha.poc.micro.district.domain;
+package com.asseco.aha.poc.micro.district.persistence.domain;
 
 import java.io.Serializable;
 
