@@ -1,2 +1,10 @@
 liquibase:
     change-log: classpath:/db/changelog/db.changelog-master.sql
+    
+spring:
+    jpa:
+        generate-ddl: false
+        show-sql: true
+        hibernate:
+            ddl-auto: none
+        
