@@ -1,0 +1,12 @@
+server:
+    port: 8088
+
+info:
+    component: location-district
+
+spring:
+    application:
+        name: location-district
+#    cloud:
+#        config:
+#            name: mycfg
