@@ -1,12 +1,19 @@
 package com.asseco.aha.poc.micro.district.service;
 
+import static com.asseco.aha.poc.micro.district.persistence.repository.DistrictSpecifications.byCsuCode;
+import static com.asseco.aha.poc.micro.district.persistence.repository.DistrictSpecifications.byName;
+import static com.asseco.aha.poc.micro.district.persistence.repository.DistrictSpecifications.byPlateCode;
+import static org.springframework.data.jpa.domain.Specifications.where;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.domain.Specifications;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import com.asseco.aha.poc.micro.district.persistence.domain.District;
 import com.asseco.aha.poc.micro.district.persistence.repository.DistrictRepository;
@@ -28,6 +35,18 @@ public class DistrictServiceImpl implements DistrictService {
 	@Override
 	public List<District> findAll(String name, String csuCode, String plateCode) {
 		Specifications<District> spec = null;
+
+		if (!StringUtils.isEmpty(name)) {
+			spec = where(byName(name));
+		}
+		if (!StringUtils.isEmpty(csuCode)) {
+			Specification<District> localSpec = byCsuCode(csuCode);
+			spec = spec == null ? where(localSpec) : spec.and(localSpec);
+		}
+		if (!StringUtils.isEmpty(plateCode)) {
+			Specification<District> localSpec = byPlateCode(plateCode);
+			spec = spec == null ? where(localSpec) : spec.and(localSpec);
+		}
 
 		return districtRepository.findAll(spec, sorting);
 	}
