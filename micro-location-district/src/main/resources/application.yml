@@ -1,3 +1,6 @@
+server:
+    port: 8090
+    
 liquibase:
     change-log: classpath:/db/changelog/db.changelog-master.sql
     
@@ -7,4 +10,7 @@ spring:
         show-sql: true
         hibernate:
             ddl-auto: none
-        
+
+http:
+    mappers:
+        jsonPrettyPrint: true

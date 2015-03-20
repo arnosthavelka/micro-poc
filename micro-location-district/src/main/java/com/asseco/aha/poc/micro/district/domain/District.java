@@ -6,16 +6,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 
 /**
  * Definition of districts in Czech Republic.
  */
 @Entity
-@NamedQueries(value = {
-		@NamedQuery(name = "District.findByName", query = "select c from District c where c.name = ?1"),
-		@NamedQuery(name = "District.findByNameAndCsuCode", query = "select c from District c where c.name like ?1 and c.csuCode = ?2") })
 public class District implements Serializable {
 
     private static final long serialVersionUID = 1L;
