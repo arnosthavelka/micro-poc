@@ -2,11 +2,14 @@ server:
     port: 8090
 
 info:
-    component: location-district
+    id: ${spring.application.name}
+    build:
+        name: ${project.artifactId}
+        version: ${project.version}
 
 spring:
     application:
-        name: location-district
+        name: ${project.artifactId}
 #    cloud:
 #        config:
 #            name: mycfg
