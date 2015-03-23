@@ -3,6 +3,18 @@ spring:
         config:
             uri: http://localhost:8888
             failFast: true
+    jpa:
+        generate-ddl: false
+        show-sql: true
+        hibernate:
+            ddl-auto: none
+    jackson:
+        serialization:
+            INDENT_OUTPUT: true
+            
+liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.sql
+    
 logging:
     level:
         com.asseco.aha.poc.micro: 'DEBUG'

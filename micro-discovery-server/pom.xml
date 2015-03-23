@@ -6,7 +6,7 @@
 	<artifactId>micro-discovery-server</artifactId>
 	<packaging>jar</packaging>
 
-	<name>micro-discovery-server</name>
+	<name>${project.artifactId}</name>
 	<description>Example of discovery (Eureka) server (Service registration and discovery)</description>
 
 	<parent>
@@ -70,7 +70,7 @@
 							<artifactId>eureka-client</artifactId>
 						</dependency>
 					</requiresUnpack>
-				</configuration>				
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
