@@ -10,7 +10,6 @@ spring:
         show-sql: true
         hibernate:
             ddl-auto: none
-
-http:
-    mappers:
-        jsonPrettyPrint: true
+    jackson:
+        serialization:
+            INDENT_OUTPUT: true

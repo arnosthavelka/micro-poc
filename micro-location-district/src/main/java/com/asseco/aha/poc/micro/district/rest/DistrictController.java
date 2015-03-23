@@ -27,7 +27,11 @@ public class DistrictController {
 	/**
 	 * Find all districts filtered by name, codes or both. The data are sorted by the name.
 	 * 
-	 * Example URLs: http://localhost:8090/district/
+	 * Example URLs:
+	 * <ul>
+	 * <li>all data - http://localhost:8090/district/</li>
+	 * <li>Just "Pardubický" district - http://localhost:8090/district/?name=p&plateCode=E</li>
+	 * </ul>
 	 * 
 	 * @return instance <code>Resources&lt;DistrictResource&gt;</code> with all resources of found entities
 	 *         <code>District</code>.
@@ -40,6 +44,12 @@ public class DistrictController {
 		return new Resources<DistrictResource>(resources, linkTo(DistrictController.class).withSelfRel());
 	}
 
+	/**
+	 * Find district by its ID.
+	 * 
+	 * @param id ID of desired district
+	 * @return instance of <code>DistrictResource</code>
+	 */
 	@RequestMapping(value = "/{id}/", method = RequestMethod.GET, produces = { "application/hal+json" })
 	public DistrictResource item(@PathVariable long id) {
 		return assembler.toResource(service.getItem(id));

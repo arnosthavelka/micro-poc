@@ -57,7 +57,7 @@ public class DistrictServiceImpl implements DistrictService {
 	 * @see com.asseco.aha.poc.micro.district.service.DistrictService#getItem(long)
 	 */
 	public District getItem(long id) {
-		return districtRepository.getOne(id);
+		return districtRepository.findOne(id);
 	}
 
 }
