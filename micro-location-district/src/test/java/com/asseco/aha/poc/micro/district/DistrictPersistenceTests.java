@@ -21,7 +21,7 @@ import com.asseco.aha.poc.micro.district.persistence.repository.DistrictReposito
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = DistrictApplication.class)
 @Transactional(readOnly = true)
-public class DistrictTests {
+public class DistrictPersistenceTests {
 
 	// @Autowired
 	// JdbcTemplate jdbcTemplate;
