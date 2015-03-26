@@ -15,7 +15,7 @@ import com.asseco.aha.poc.micro.canton.persistence.domain.Canton;
 import com.asseco.aha.poc.micro.canton.service.CantonService;
 
 @RestController
-@RequestMapping("/district")
+@RequestMapping("/canton")
 public class CantonController {
 
 	@Autowired
@@ -27,7 +27,7 @@ public class CantonController {
 	/**
 	 * Find all cantons filtered by name, codes or both. The data are sorted by the name.
 	 * 
-	 * Example URLs:
+	 * Sample URLs:
 	 * <ul>
 	 * <li>all data - http://localhost:8090/canton/</li>
 	 * <li>Just "XYZ" district - http://localhost:8090/canton/?name=p&districtCode=CZ010</li>
@@ -46,6 +46,11 @@ public class CantonController {
 
 	/**
 	 * Find district by its ID.
+	 * 
+	 * Sample URLs:
+	 * <ul>
+	 * <li>canton "Praha hlavní město" - http://localhost:8091/canton/3100/</li>
+	 * </ul>
 	 * 
 	 * @param id
 	 *            ID of desired canton
