@@ -1,0 +1,15 @@
+server:
+    port: 8090
+
+info:
+    id: ${spring.application.name}
+    build:
+        name: ${project.artifactId}
+        version: ${project.version}
+
+spring:
+    application:
+        name: ${project.artifactId}
+#    cloud:
+#        config:
+#            name: mycfg
