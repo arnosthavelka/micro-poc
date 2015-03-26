@@ -8,6 +8,6 @@ public interface DistrictService {
 
 	List<District> findAll(String name, String csuCode, String plateCode);
 
-	District getItem(long id);
+	District getItem(String code);
 
 }

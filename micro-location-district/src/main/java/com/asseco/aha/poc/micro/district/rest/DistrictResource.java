@@ -10,6 +10,6 @@ import com.asseco.aha.poc.micro.district.persistence.domain.District;
 public class DistrictResource extends Resource<District> {
 
 	public DistrictResource(District entity) {
-		super(entity, linkTo(methodOn(DistrictController.class).item(entity.getId())).withSelfRel());
+		super(entity, linkTo(methodOn(DistrictController.class).item(entity.getCsuCode())).withSelfRel());
 	}
 }

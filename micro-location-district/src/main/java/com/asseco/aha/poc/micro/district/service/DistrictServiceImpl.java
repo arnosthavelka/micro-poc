@@ -54,10 +54,10 @@ public class DistrictServiceImpl implements DistrictService {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.asseco.aha.poc.micro.district.service.DistrictService#getItem(long)
+	 * @see com.asseco.aha.poc.micro.district.service.DistrictService#getItem(java.lang.String)
 	 */
-	public District getItem(long id) {
-		return districtRepository.findOne(id);
+	public District getItem(String code) {
+		return districtRepository.findByCsuCodeIgnoringCase(code);
 	}
 
 }
