@@ -57,10 +57,10 @@ public class CantonServiceImpl implements CantonService {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.asseco.aha.poc.micro.canton.service.CantonService#getItem(long)
+	 * @see com.asseco.aha.poc.micro.canton.service.CantonService#getItem(java.lang.String)
 	 */
-	public Canton getItem(long id) {
-		return cantonRepository.findOne(id);
+	public Canton getItem(String code) {
+		return cantonRepository.findByCsuCodeIgnoringCase(code);
 	}
 
 }

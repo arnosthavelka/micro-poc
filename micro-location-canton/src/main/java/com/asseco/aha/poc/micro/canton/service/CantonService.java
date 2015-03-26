@@ -8,6 +8,6 @@ public interface CantonService {
 
 	List<Canton> findAll(String name, String csuCode, String districtCode);
 
-	Canton getItem(long id);
+	Canton getItem(String code);
 
 }

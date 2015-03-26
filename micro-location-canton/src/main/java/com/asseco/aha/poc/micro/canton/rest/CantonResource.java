@@ -9,7 +9,8 @@ import com.asseco.aha.poc.micro.canton.persistence.domain.Canton;
 
 public class CantonResource extends Resource<Canton> {
 
+
 	public CantonResource(Canton entity) {
-		super(entity, linkTo(methodOn(CantonController.class).item(entity.getId())).withSelfRel());
+		super(entity, linkTo(methodOn(CantonController.class).item(entity.getCsuCode())).withSelfRel());
 	}
 }

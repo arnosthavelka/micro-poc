@@ -49,15 +49,15 @@ public class CantonController {
 	 * 
 	 * Sample URLs:
 	 * <ul>
-	 * <li>canton "Praha hlavní město" - http://localhost:8091/canton/3100/</li>
+	 * <li>canton "Praha hlavní město" - http://localhost:8091/canton/CZ0100/</li>
 	 * </ul>
 	 * 
-	 * @param id
-	 *            ID of desired canton
+	 * @param code
+	 *            ČSÚ code of desired canton
 	 * @return instance of <code>CantonResource</code>
 	 */
-	@RequestMapping(value = "/{id}/", method = RequestMethod.GET, produces = { "application/hal+json" })
-	public CantonResource item(@PathVariable long id) {
-		return assembler.toResource(service.getItem(id));
+	@RequestMapping(value = "/{code}/", method = RequestMethod.GET, produces = { "application/hal+json" })
+	public CantonResource item(@PathVariable String code) {
+		return assembler.toResource(service.getItem(code));
 	}
 }
