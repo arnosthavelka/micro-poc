@@ -12,7 +12,7 @@
 	<parent>
 		<groupId>com.asseco.aha.poc.micro</groupId>
 		<artifactId>micro-parent</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<version>0.0.3-SNAPSHOT</version>
 	</parent>
 
 	<properties>
@@ -20,11 +20,6 @@
 	</properties>
 
 	<dependencies>
-		<!-- dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-aop</artifactId>
-		</dependency-->
-
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>

@@ -29,8 +29,8 @@ public class CantonController {
 	 * 
 	 * Sample URLs:
 	 * <ul>
-	 * <li>all data - http://localhost:8090/canton/</li>
-	 * <li>Just "XYZ" district - http://localhost:8090/canton/?name=p&districtCode=CZ010</li>
+	 * <li>all data - http://localhost:8091/canton/</li>
+	 * <li>Just "XYZ" district - http://localhost:8091/canton/?name=p&districtCode=CZ010</li>
 	 * </ul>
 	 * 
 	 * @return instance <code>Resources&lt;DistrictResource&gt;</code> with all resources of found entities
