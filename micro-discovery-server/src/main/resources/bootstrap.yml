@@ -2,11 +2,15 @@ server:
     port: 8761
 
 info:
-    component: Discovery server
+    id: ${spring.application.name}
+    build:
+        name: ${project.artifactId}
+        version: ${project.version}
+        time: ${git.build.time}
 
 spring:
     application:
-        name: discovery-server
+        name: ${project.artifactId}
     cloud:
         config:
             name: discovery

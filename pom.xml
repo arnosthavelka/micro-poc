@@ -40,6 +40,22 @@
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-maven-plugin</artifactId>
 				</plugin>
+				<plugin>
+					<groupId>pl.project13.maven</groupId>
+					<artifactId>git-commit-id-plugin</artifactId>
+					<!-- Ensure that the revision goal is invoked during the initialize phase. -->
+					<executions>
+						<execution>
+							<goals>
+								<goal>revision</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<!-- Configure the location of the .git directory. -->
+						<dotGitDirectory>${project.basedir}/../.git</dotGitDirectory>
+					</configuration>
+				</plugin>			
 			</plugins>
 		</pluginManagement>
 		<resources>

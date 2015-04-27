@@ -2,10 +2,14 @@ server:
     port: 8888
 
 info:
-    component: Config server
+    id: ${spring.application.name}
+    build:
+        name: ${project.artifactId}
+        version: ${project.version}
+        time: ${git.build.time}
 
 spring:
     application:
-        name: config-server
+        name: ${project.artifactId}
     profiles:
         active: native
