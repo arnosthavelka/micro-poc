@@ -10,13 +10,13 @@
 	<description>Location-District service (with in-memory DB and data defined by Liquibase).</description>
 
 	<parent>
-		<groupId>com.asseco.aha.poc.micro</groupId>
+		<groupId>com.github.aha.poc.micro</groupId>
 		<artifactId>micro-parent</artifactId>
-		<version>0.0.3-SNAPSHOT</version>
+		<version>0.0.4-SNAPSHOT</version>
 	</parent>
 
 	<properties>
-		<start-class>com.asseco.aha.poc.micro.district.DistrictApplication</start-class>
+		<start-class>com.github.aha.poc.micro.district.DistrictApplication</start-class>
 	</properties>
 
 	<dependencies>

@@ -10,13 +10,13 @@
 	<description>Example of discovery (Eureka) server (Service registration and discovery)</description>
 
 	<parent>
-		<groupId>com.asseco.aha.poc.micro</groupId>
+		<groupId>com.github.aha.poc.micro</groupId>
 		<artifactId>micro-parent</artifactId>
-		<version>0.0.3-SNAPSHOT</version>
+		<version>0.0.4-SNAPSHOT</version>
 	</parent>
 
 	<properties>
-		<start-class>com.asseco.aha.poc.micro.discovery.DiscoveryServerApplication</start-class>
+		<start-class>com.github.aha.poc.micro.discovery.DiscoveryServerApplication</start-class>
 	</properties>
 
 	<dependencyManagement>
