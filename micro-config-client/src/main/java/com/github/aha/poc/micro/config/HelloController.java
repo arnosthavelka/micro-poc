@@ -1,4 +1,4 @@
-package com.asseco.aha.poc.micro.config;
+package com.github.aha.poc.micro.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

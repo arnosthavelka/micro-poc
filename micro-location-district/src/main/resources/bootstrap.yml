@@ -11,8 +11,7 @@ info:
 spring:
     application:
         name: ${project.artifactId}
-#    cloud:
-#        config:
-#            name: mycfg
-
+    cloud:
+        config:
+            uri: http://localhost:8888
         

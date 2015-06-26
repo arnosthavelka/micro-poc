@@ -1,4 +1,4 @@
-package com.asseco.aha.poc.micro.config;
+package com.github.aha.poc.micro.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

@@ -10,9 +10,9 @@
 	<description>Example of configuration client</description>
 
 	<parent>
-		<groupId>com.asseco.aha.poc.micro</groupId>
+		<groupId>com.github.aha.poc.micro</groupId>
 		<artifactId>micro-parent</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<version>0.0.4-SNAPSHOT</version>
 	</parent>
 
 	<properties>
