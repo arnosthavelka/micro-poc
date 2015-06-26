@@ -7,7 +7,7 @@
 	<packaging>jar</packaging>
 
 	<name>micro-admin-server</name>
-	<description>Administration server (admin console + config server) for whole Micro POC</description>
+	<description>Administration server (admin console + config server) for all modules of Micro POC</description>
 
 	<parent>
 		<groupId>com.github.aha.poc.micro</groupId>
@@ -24,6 +24,16 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
 			<version>${spring.cloud.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-server</artifactId>
+			<version>${spring.boot.admin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-server-ui</artifactId>
+			<version>1.2.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

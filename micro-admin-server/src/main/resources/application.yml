@@ -1,8 +1,7 @@
 spring:
-    cloud:
-        config:
-            uri: http://localhost:8888
-            failFast: true
+    boot:
+        admin:
+            url: http://localhost:8888
     jpa:
         generate-ddl: false
         show-sql: true
@@ -11,7 +10,7 @@ spring:
     jackson:
         serialization:
             INDENT_OUTPUT: true
-            
+       
 eureka:
     instance:
         metadataMap:

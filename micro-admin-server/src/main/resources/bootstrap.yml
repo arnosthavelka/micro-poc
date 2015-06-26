@@ -13,3 +13,9 @@ spring:
         name: ${project.artifactId}
     profiles:
         active: native
+    cloud:
+        config:
+            uri: http://localhost:8888/config        
+            server:
+                prefix: /config
+        
