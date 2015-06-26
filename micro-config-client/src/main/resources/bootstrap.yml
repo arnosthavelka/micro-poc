@@ -2,11 +2,12 @@ server:
     port: 8088
 
 info:
-    component: Config Samples
+    build:
+        name: ${project.artifactId}
+        version: ${project.version}
+        time: ${git.build.time}
 
 spring:
-    application:
-        name: config-client
     cloud:
         config:
             uri: http://localhost:8888/config

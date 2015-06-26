@@ -2,17 +2,16 @@ server:
     port: 8761
 
 info:
-    id: ${spring.application.name}
     build:
         name: ${project.artifactId}
         version: ${project.version}
         time: ${git.build.time}
 
 spring:
-    application:
-        name: ${project.artifactId}
     cloud:
         config:
+            uri: http://localhost:8888/config
+            failFast: true
             name: discovery
             
 eureka:
