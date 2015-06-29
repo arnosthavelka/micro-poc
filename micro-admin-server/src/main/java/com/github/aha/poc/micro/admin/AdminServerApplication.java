@@ -9,8 +9,9 @@ import de.codecentric.boot.admin.config.EnableAdminServer;
 /**
  * Administration servers:
  * <ul>
- * <li>administration console (URL: ???)</li>
- * <li>configuration server (URL: http://localhost:8888/mycfg/env)</li>
+ * <li>administration console (URL: http://localhost:8888/)</li>
+ * <li>configuration server (URL: http://localhost:8888/config/api/applications, http://localhost:8888/config/mycfg/env)
+ * </li>
  * </ul>
  */
 @SpringBootApplication

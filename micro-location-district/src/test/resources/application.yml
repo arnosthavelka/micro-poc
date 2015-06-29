@@ -2,9 +2,6 @@ server:
     port: 8090
 
 spring:
-    cloud:
-        config:
-            failFast: true
     jpa:
         show-sql: true
         hibernate:
