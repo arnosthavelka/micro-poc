@@ -12,4 +12,4 @@ liquibase:
     
 logging:
     level:
-        com.asseco.aha.poc.micro: 'DEBUG'
+        com.github.aha.poc.micro: 'DEBUG'

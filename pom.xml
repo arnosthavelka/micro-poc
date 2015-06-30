@@ -40,6 +40,10 @@
 				<plugin>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-maven-plugin</artifactId>
+					<configuration>
+						<!-- Allow maven variables in resources when starting with spring-boot:run goal. -->
+						<addResources>false</addResources>
+					</configuration>				
 				</plugin>
 				<plugin>
 					<groupId>pl.project13.maven</groupId>
