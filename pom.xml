@@ -5,7 +5,7 @@
 
 	<groupId>com.github.aha.poc.micro</groupId>
 	<artifactId>micro-parent</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.5-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>micro-parent</name>
@@ -14,16 +14,27 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<spring.cloud.version>1.0.0.RELEASE</spring.cloud.version>
-		<spring.boot.admin.version>1.2.1</spring.boot.admin.version>
+		<spring.boot.admin.version>1.4.4</spring.boot.admin.version>
 	</properties>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.2.4.RELEASE</version>
+		<version>1.4.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	
+	<dependencyManagement>
+	    <dependencies>
+	        <dependency>
+	            <groupId>org.springframework.cloud</groupId>
+	            <artifactId>spring-cloud-dependencies</artifactId>
+	            <version>Camden.SR2</version>
+	            <type>pom</type>
+	            <scope>import</scope>
+	        </dependency>
+	    </dependencies>
+	</dependencyManagement>	
 
 	<dependencies>
 		<!-- Testing -->
@@ -43,7 +54,7 @@
 					<configuration>
 						<!-- Allow maven variables in resources when starting with spring-boot:run goal. -->
 						<addResources>false</addResources>
-					</configuration>				
+					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>pl.project13.maven</groupId>
@@ -60,7 +71,7 @@
 						<!-- Configure the location of the .git directory. -->
 						<dotGitDirectory>${project.basedir}/../.git</dotGitDirectory>
 					</configuration>
-				</plugin>			
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<resources>

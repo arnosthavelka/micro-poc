@@ -3,9 +3,9 @@ server:
 
 info:
     build:
-        name: ${project.artifactId}
-        version: ${project.version}
-        time: ${git.build.time}
+        name: '@project.artifactId@'
+        version: '@project.version@'
+        time: '@git.build.time@'
 
 spring:
     profiles:
