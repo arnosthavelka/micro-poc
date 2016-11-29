@@ -37,8 +37,8 @@ public class CantonController {
 	 *         <code>District</code>.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = { "application/hal+json" })
-	public Resources<CantonResource> findAll(String name, String csuCode, String plateCode) {
-		List<Canton> data = service.findAll(name, csuCode, plateCode);
+	public Resources<CantonResource> findAll(String name, String csuCode, String districtCode) {
+		List<Canton> data = service.findAll(name, csuCode, districtCode);
 
 		List<CantonResource> resources = assembler.toResources(data);
 		return new Resources<CantonResource>(resources, linkTo(CantonController.class).withSelfRel());
