@@ -10,8 +10,7 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,9 +19,8 @@ import com.github.aha.poc.micro.canton.persistence.domain.Canton;
 import com.github.aha.poc.micro.canton.persistence.repository.CantonRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = TestRepositoryApplication.class)
+@SpringBootTest(classes = TestRepositoryApplication.class)
 @Transactional(readOnly = true)
-@ComponentScan(basePackageClasses = CantonPersistenceTests.class)
 public class CantonPersistenceTests {
 
 	private static final String DISTRICT_CZ010 = "CZ010";
