@@ -10,8 +10,8 @@ import de.codecentric.boot.admin.config.EnableAdminServer;
  * Administration servers:
  * <ul>
  * <li>administration console (URL: http://localhost:8888/)</li>
- * <li>configuration server (URL: http://localhost:8888/config/api/applications, http://localhost:8888/config/mycfg/env)
- * </li>
+ * <li>configuration server (URL: http://localhost:8888/config/api/applications - ???)</li>
+ * <li>example of application configurations (URL: http://localhost:8888/config/discovery/native, http://localhost:8888/config/mycfg/env)</li>
  * </ul>
  */
 @SpringBootApplication

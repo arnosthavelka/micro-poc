@@ -1,16 +1,14 @@
-server:
-    port: 8088
-
 info:
     build:
-        name: ${project.artifactId}
-        version: ${project.version}
-        time: ${git.build.time}
+        name: '@project.artifactId@'
+        version: '@project.version@'
+        time: '@git.build.time@'
 
 spring:
+    application:
+        name: ${info.build.name}
     cloud:
         config:
             uri: http://localhost:8888/config
             failFast: true
-            name: mycfg
             
