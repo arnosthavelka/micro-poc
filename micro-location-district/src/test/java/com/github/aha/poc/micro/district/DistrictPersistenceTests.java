@@ -10,16 +10,16 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.domain.Sort;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.github.aha.poc.micro.district.persistence.domain.District;
 import com.github.aha.poc.micro.district.persistence.repository.DistrictRepository;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = TestRepositoryApplication.class)
+@RunWith(SpringRunner.class)
+@DataJpaTest(showSql=true)
 @Transactional(readOnly = true)
 public class DistrictPersistenceTests {
 

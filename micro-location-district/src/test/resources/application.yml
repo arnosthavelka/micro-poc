@@ -1,9 +1,5 @@
-server:
-    port: 8090
-
 spring:
     jpa:
-        show-sql: true
         hibernate:
             ddl-auto: none
       
@@ -13,3 +9,6 @@ liquibase:
 logging:
     level:
         com.github.aha.poc.micro: 'DEBUG'
+eureka:
+    client:
+        enabled: false
