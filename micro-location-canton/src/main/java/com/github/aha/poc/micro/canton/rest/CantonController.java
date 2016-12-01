@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resources;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,7 +37,7 @@ public class CantonController {
 	 * @return instance <code>Resources&lt;DistrictResource&gt;</code> with all resources of found entities
 	 *         <code>District</code>.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET, produces = { "application/hal+json" })
+	@RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Resources<CantonResource> findAll(String name, String csuCode, String districtCode) {
 		List<Canton> data = service.findAll(name, csuCode, districtCode);
 
@@ -56,7 +57,7 @@ public class CantonController {
 	 *            ČSÚ code of desired canton
 	 * @return instance of <code>CantonResource</code>
 	 */
-	@RequestMapping(value = "/{code}/", method = RequestMethod.GET, produces = { "application/hal+json" })
+	@RequestMapping(value = "/{code}/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public CantonResource item(@PathVariable String code) {
 		return assembler.toResource(service.getItem(code));
 	}

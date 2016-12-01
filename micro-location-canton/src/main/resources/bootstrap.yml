@@ -1,6 +1,3 @@
-server:
-    port: 8091
-
 info:
     build:
         name: '@project.artifactId@'
@@ -8,17 +5,9 @@ info:
         time: '@git.build.time@'
 
 spring:
+    application:
+        name: ${info.build.name}
     cloud:
         config:
             uri: http://localhost:8888/config
             failFast: true
-            name: location-canton
-    application:
-        name: ${info.build.name}
-    boot:
-        admin:
-            url: http://localhost:8888            
-
-liquibase:
-    change-log: classpath:/db/changelog/db.changelog-master.sql
-    

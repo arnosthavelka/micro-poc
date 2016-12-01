@@ -1,9 +1,6 @@
 server:
     port: 8088
 
-config:
-    client:
-        name: Arny
 spring:
     boot:
         admin:
@@ -11,14 +8,13 @@ spring:
     jackson:
         serialization:
             INDENT_OUTPUT: true    
-    jpa:
-        generate-ddl: false
-        show-sql: true
-        hibernate:
-            ddl-auto: none
  
 logging:
     leve:
         com.github.aha.poc.micro: 'DEBUG'
 
 foo: aha
+
+config:
+    client:
+        name: Arny

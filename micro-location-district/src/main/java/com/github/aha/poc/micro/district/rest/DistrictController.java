@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resources;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,7 +37,7 @@ public class DistrictController {
 	 * @return instance <code>Resources&lt;DistrictResource&gt;</code> with all resources of found entities
 	 *         <code>District</code>.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET, produces = { "application/hal+json" })
+	@RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Resources<DistrictResource> findAll(String name, String csuCode, String plateCode) {
 		List<District> data = service.findAll(name, csuCode, plateCode);
 
@@ -56,7 +57,7 @@ public class DistrictController {
 	 *            ČSÚ code of desired district
 	 * @return instance of <code>DistrictResource</code>
 	 */
-	@RequestMapping(value = "/{code}/", method = RequestMethod.GET, produces = { "application/hal+json" })
+	@RequestMapping(value = "/{code}/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public DistrictResource item(@PathVariable String code) {
 		return assembler.toResource(service.getItem(code));
 	}
