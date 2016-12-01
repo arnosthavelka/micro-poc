@@ -1,23 +1,13 @@
-server:
-    port: 8761
-
 info:
     build:
-        name: ${project.artifactId}
-        version: ${project.version}
-        time: ${git.build.time}
+        name: '@project.artifactId@'
+        version: '@project.version@'
+        time: '@git.build.time@'
 
 spring:
+    application:
+        name: ${info.build.name}
     cloud:
         config:
             uri: http://localhost:8888/config
             failFast: true
-            name: discovery
-            
-eureka:
-    client:
-        # standalone mode
-        registerWithEureka: false
-        fetchRegistry: false
-    server:
-        waitTimeInMsWhenSyncEmpty: 0

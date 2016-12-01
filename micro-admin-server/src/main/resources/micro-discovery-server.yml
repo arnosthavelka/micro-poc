@@ -1,0 +1,21 @@
+server:
+    port: 8761
+
+spring:
+    boot:
+        admin:
+            url: http://localhost:8888
+    jackson:
+        serialization:
+            INDENT_OUTPUT: true    
+
+logging:
+    leve:
+        com.github.aha.poc.micro: 'DEBUG'
+eureka:
+    client:
+        # standalone mode
+        registerWithEureka: false
+        fetchRegistry: false
+    server:
+        waitTimeInMsWhenSyncEmpty: 0
