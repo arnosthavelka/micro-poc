@@ -10,16 +10,19 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.domain.Sort;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.github.aha.poc.micro.canton.persistence.domain.Canton;
 import com.github.aha.poc.micro.canton.persistence.repository.CantonRepository;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = TestRepositoryApplication.class)
+/**
+ * Tests of canton's persistence layer.
+ */
+@RunWith(SpringRunner.class)
+@DataJpaTest(showSql=true)
 @Transactional(readOnly = true)
 public class CantonPersistenceTests {
 

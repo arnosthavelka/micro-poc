@@ -9,6 +9,7 @@ liquibase:
 logging:
     level:
         com.github.aha.poc.micro: 'DEBUG'
+
 eureka:
     client:
         enabled: false
