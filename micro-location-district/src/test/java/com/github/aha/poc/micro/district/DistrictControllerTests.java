@@ -2,7 +2,6 @@ package com.github.aha.poc.micro.district;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -37,38 +36,41 @@ import com.github.aha.poc.micro.district.service.DistrictService;
  */
 @RunWith(SpringRunner.class)
 @RestClientTest(DistrictController.class)
-@Import(value=DistrictResourceAssembler.class)
+@Import(value = DistrictResourceAssembler.class)
 public class DistrictControllerTests {
 
-    @Autowired
-    private DistrictController client;
- 
-    @MockBean
+	@Autowired
+	private DistrictController client;
+
+	@MockBean
 	private DistrictService service;
 
-    @Before
-    public void setUp() throws Exception {
-    	District district = new District();
-    	district.setCsuCode("CZ010");
-    	district.setName("Hlavní město Praha");
-    	
-    	// prepare HTTP request (due to links)
-        String localHost = "http://localhost";
-        HttpServletRequest httpServletRequestMock = mock(HttpServletRequest.class);
-        when(httpServletRequestMock.getRequestURL()).thenReturn(new StringBuffer(localHost));
-        when(httpServletRequestMock.getHeaderNames()).thenReturn(Collections.emptyEnumeration());
-        when(httpServletRequestMock.getRequestURI()).thenReturn(localHost);
-        when(httpServletRequestMock.getContextPath()).thenReturn(StringUtils.EMPTY);
-        when(httpServletRequestMock.getServletPath()).thenReturn(StringUtils.EMPTY);
-        ServletRequestAttributes servletRequestAttributes = new ServletRequestAttributes(httpServletRequestMock);
-        RequestContextHolder.setRequestAttributes(servletRequestAttributes);
-    	// prepare service response
-        given(this.service.getItem("CZ010")).willReturn(district);    	
-        given(this.service.findAll(null, null, null)).willReturn(Arrays.asList(district, district));
-    }	
+	private District district;
+
+	@Before
+	public void setUp() throws Exception {
+		district = new District();
+		district.setCsuCode("CZ010");
+		district.setName("Hlavní město Praha");
+
+		// prepare HTTP request (due to links)
+		String localHost = "http://localhost";
+		HttpServletRequest httpServletRequestMock = mock(HttpServletRequest.class);
+		when(httpServletRequestMock.getRequestURL()).thenReturn(new StringBuffer(localHost));
+		when(httpServletRequestMock.getHeaderNames()).thenReturn(Collections.emptyEnumeration());
+		when(httpServletRequestMock.getRequestURI()).thenReturn(localHost);
+		when(httpServletRequestMock.getContextPath()).thenReturn(StringUtils.EMPTY);
+		when(httpServletRequestMock.getServletPath()).thenReturn(StringUtils.EMPTY);
+		ServletRequestAttributes servletRequestAttributes = new ServletRequestAttributes(httpServletRequestMock);
+		RequestContextHolder.setRequestAttributes(servletRequestAttributes);
+	}
 
 	@Test
 	public void testFindAll() {
+		// prepare service response
+		when(this.service.findAll(null, null, null)).thenReturn(Arrays.asList(district, district));
+
+		// start testing
 		Resources<DistrictResource> resources = this.client.findAll(null, null, null);
 		// verify resource
 		assertThat(resources.getContent().size(), equalTo(2));
@@ -81,6 +83,10 @@ public class DistrictControllerTests {
 
 	@Test
 	public void testItemById() {
+		// prepare service response
+		when(this.service.getItem("CZ010")).thenReturn(district);
+
+		// start testing
 		DistrictResource response = this.client.item("CZ010");
 		// verify resource
 		District district = response.getContent();
