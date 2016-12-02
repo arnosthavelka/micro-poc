@@ -6,6 +6,7 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,6 +21,7 @@ import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.hateoas.Link;
+import org.springframework.hateoas.Resources;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -62,7 +64,20 @@ public class DistrictControllerTests {
         RequestContextHolder.setRequestAttributes(servletRequestAttributes);
     	// prepare service response
         given(this.service.getItem("CZ010")).willReturn(district);    	
+        given(this.service.findAll(null, null, null)).willReturn(Arrays.asList(district, district));
     }	
+
+	@Test
+	public void testFindAll() {
+		Resources<DistrictResource> resources = this.client.findAll(null, null, null);
+		// verify resource
+		assertThat(resources.getContent().size(), equalTo(2));
+		// verify links
+		List<Link> links = resources.getLinks();
+		assertThat(links.size(), equalTo(1));
+		Link link = links.get(0);
+		assertThat(link.getHref(), equalTo("http://localhost/district"));
+	}
 
 	@Test
 	public void testItemById() {
@@ -71,7 +86,7 @@ public class DistrictControllerTests {
 		District district = response.getContent();
 		assertThat(district.getCsuCode(), equalTo("CZ010"));
 		assertThat(district.getName(), equalTo("Hlavní město Praha"));
-		// verify added links
+		// verify links
 		List<Link> links = response.getLinks();
 		assertThat(links.size(), equalTo(1));
 		Link link = links.get(0);
