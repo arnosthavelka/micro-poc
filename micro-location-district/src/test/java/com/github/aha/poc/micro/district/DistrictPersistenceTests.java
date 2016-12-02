@@ -18,6 +18,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.github.aha.poc.micro.district.persistence.domain.District;
 import com.github.aha.poc.micro.district.persistence.repository.DistrictRepository;
 
+/**
+ * Tests of district's persistence layer.
+ */
 @RunWith(SpringRunner.class)
 @DataJpaTest(showSql=true)
 @Transactional(readOnly = true)
