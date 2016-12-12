@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>mng-admin</artifactId>
+	<artifactId>mng-dashboard</artifactId>
 	<packaging>jar</packaging>
 
-	<name>mng-admin</name>
-	<description>Administration server (UI + server) for all modules of Micro POC</description>
+	<name>mng-dashboard</name>
+	<description>Microservices dashboard server (UI + server) for all modules of Micro POC</description>
 
 	<parent>
 		<groupId>com.github.aha.poc.micro</groupId>
@@ -27,16 +27,11 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
-		</dependency>		
-		<dependency>
-			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-server</artifactId>
-			<version>${spring.boot.admin.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-server-ui</artifactId>
-			<version>${spring.boot.admin.version}</version>
+		    <groupId>be.ordina</groupId>
+		    <artifactId>microservices-dashboard-server</artifactId>
+		    <version>${microservices-dashboard.version}</version>
 		</dependency>
 		
 		<dependency>
