@@ -1,0 +1,17 @@
+server:
+    port: 8090
+
+info:
+    build:
+        name: '@project.artifactId@'
+        version: '@project.version@'
+        time: '@git.build.time@'
+
+spring:
+    application:
+        name: ${info.build.name}
+    cloud:
+        config:
+            discovery:
+                enabled: true
+                serviceId: mng-config

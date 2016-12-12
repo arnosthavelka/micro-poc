@@ -1,0 +1,19 @@
+server:
+    port: 8888
+
+info:
+    build:
+        name: '@project.artifactId@'
+        version: '@project.version@'
+        time: '@git.build.time@'
+
+spring:
+    application:
+        name: ${info.build.name}
+    jackson:
+        serialization:
+            INDENT_OUTPUT: true
+
+logging:
+    level:
+        com.github.aha.poc.micro: 'DEBUG'
