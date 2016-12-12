@@ -11,7 +11,7 @@
 
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>target/logs/micro-config-client-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<fileNamePattern>target/logs/config-client-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
 			<maxHistory>30</maxHistory>
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<maxFileSize>2MB</maxFileSize>
