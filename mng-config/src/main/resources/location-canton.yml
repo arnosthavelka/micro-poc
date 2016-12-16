@@ -1,3 +1,7 @@
+micro-poc:
+    district:
+        service-name: LOCATION-DISTRICT
+
 spring:
     jpa:
         generate-ddl: false
@@ -14,6 +18,8 @@ eureka:
         leaseRenewalIntervalInSeconds: 3
         metadataMap:
             instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    client:
+        registryFetchIntervalSeconds: 5
 
 liquibase:
     change-log: classpath:/db/changelog/db.changelog-master.sql
