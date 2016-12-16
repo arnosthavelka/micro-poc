@@ -3,6 +3,8 @@ Prototype of microservice approach/architecture based on Spring Boot & Spring Cl
 
 Links:
 * http://projects.spring.io/spring-cloud/spring-cloud.html
+* http://stackoverflow.com/questions/27131143/spring-cloud-configuration-server-not-working-with-local-properties-file/27159030#27159030
+* https://github.com/spencergibb/communityanswers/tree/so27131143
 
 ## Principles
 *   configuration server is not from GIT (but from embedded files)
@@ -12,14 +14,3 @@ Links:
 ## Deployment diagram
 
 ![Alt text](/_resources/deployment-diagram.png?raw=true "Deployment diagram")
-
-## Configuration
-
-Distributed/versioned configuration.
-
-Links:
-
-* http://stackoverflow.com/questions/27131143/spring-cloud-configuration-server-not-working-with-local-properties-file/27159030#27159030
-* https://github.com/spencergibb/communityanswers/tree/so27131143
-
-
