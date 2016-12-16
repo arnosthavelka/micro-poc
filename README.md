@@ -8,7 +8,7 @@ Links:
 
 ## Principles
 *   configuration server is not from GIT (but from embedded files)
-*   whole POC uses Eureka first approach (everithing is read from discovery client)
+*   whole POC uses Eureka first approach (everything is read with discovery client)
 *   location applications (district & canton) use JPA persistency where DB is handled by Liquibase (H2 database)
 
 ## Deployment diagram
